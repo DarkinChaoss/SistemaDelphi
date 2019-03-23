@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/03/23 01:27:54.000.198,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/23 01:32:06.000.269,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/23 01:32:41.000.081,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/03/23 01:33:14.000.001,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/23 01:35:00.000.335,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\SistemaRestaurante.pas</Transaction>
+    <Transaction>2019/03/23 01:37:05.000.561,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Sistema.dproj=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="SistemaRestaurante.pas"/>
+    <File Path="SistemaRestaurante.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
