@@ -1,0 +1,86 @@
+unit MenuPrinciapl;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TFrmPrincipal = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Image6: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label6: TLabel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    Label5: TLabel;
+    MainMenu1: TMainMenu;
+    Cadastro1: TMenuItem;
+    Produto1: TMenuItem;
+    Colaborador1: TMenuItem;
+    Fornecedor1: TMenuItem;
+    Vendas1: TMenuItem;
+    PDV1: TMenuItem;
+    Receber1: TMenuItem;
+    Pagar1: TMenuItem;
+    Relatorios1: TMenuItem;
+    procedure Logoff1Click(Sender: TObject);
+    procedure Colaborador1Click(Sender: TObject);
+    procedure Produto1Click(Sender: TObject);
+    procedure Fornecedor1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses FrmCadastroColaborador, FrmCadastroItem, FrmCadastroFornecedor;
+
+
+procedure TFrmPrincipal.Colaborador1Click(Sender: TObject);
+begin
+FrmColaborador := TFrmColaborador.Create(self);
+FrmColaborador.ShowModal;
+end;
+
+procedure TFrmPrincipal.Fornecedor1Click(Sender: TObject);
+begin
+
+FrmCFornecedor := TFrmCFornecedor.create(self);
+FrmCFornecedor.ShowModal;
+
+
+end;
+
+procedure TFrmPrincipal.Logoff1Click(Sender: TObject);
+begin
+  FrmPrincipal.Close;
+end;
+
+procedure TFrmPrincipal.Produto1Click(Sender: TObject);
+begin
+FrmItem := TFrmItem.create(self);
+
+FrmItem.ShowModal;
+
+end;
+
+end.

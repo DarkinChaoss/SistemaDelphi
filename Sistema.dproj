@@ -83,6 +83,8 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -98,8 +100,43 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="SistemaRestaurante.pas">
-            <Form>Login</Form>
+        <DCCReference Include="formlogin.pas">
+            <Form>Frmlogin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="MenuPrinciapl.pas">
+            <Form>FrmPrincipal</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FrmCadastroColaborador.pas">
+            <Form>FrmColaborador</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FrmCadastroItem.pas">
+            <Form>FrmCadastroItem</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FrmCadastroFornecedor.pas">
+            <Form>FrmCFornecedor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Modulo.pas">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="ModuloFornecedor.pas">
+            <Form>DataModuloForne</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="ModuloItem.pas">
+            <Form>DataModuleItem</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="FrmPdv.pas">
+            <Form>FormPdv</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -122,6 +159,10 @@
                 <Source>
                     <Source Name="MainSource">Sistema.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
                 <DeployFile LocalName="Win32\Debug\Sistema.exe" Configuration="Debug" Class="ProjectOutput">

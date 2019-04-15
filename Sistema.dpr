@@ -2,13 +2,29 @@ program Sistema;
 
 uses
   Vcl.Forms,
-  SistemaRestaurante in 'SistemaRestaurante.pas' {Login};
+  formlogin in 'formlogin.pas' {Frmlogin},
+  MenuPrinciapl in 'MenuPrinciapl.pas' {FrmPrincipal},
+  FrmCadastroColaborador in 'FrmCadastroColaborador.pas' {FrmColaborador},
+  FrmCadastroItem in 'FrmCadastroItem.pas' {FrmCadastroItem},
+  FrmCadastroFornecedor in 'FrmCadastroFornecedor.pas' {FrmCFornecedor},
+  Modulo in 'Modulo.pas' {DataModule1: TDataModule},
+  ModuloFornecedor in 'ModuloFornecedor.pas' {DataModuloForne: TDataModule},
+  ModuloItem in 'ModuloItem.pas' {DataModuleItem: TDataModule},
+  FrmPdv in 'FrmPdv.pas' {FormPdv};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TLogin, Login);
+  Application.CreateForm(TFrmlogin, Frmlogin);
+  Application.CreateForm(TFrmColaborador, FrmColaborador);
+  Application.CreateForm(TFrmColaborador, FrmColaborador);
+  Application.CreateForm(TFrmCFornecedor, FrmCFornecedor);
+  Application.CreateForm(TFrmCFornecedor, FrmCFornecedor);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TDataModuloForne, DataModuloForne);
+  Application.CreateForm(TDataModuleItem, DataModuleItem);
+  Application.CreateForm(TFormPdv, FormPdv);
   Application.Run;
 end.

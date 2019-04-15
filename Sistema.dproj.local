@@ -7,9 +7,49 @@
     <Transaction>2019/03/23 01:33:14.000.001,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2019/03/23 01:35:00.000.335,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\SistemaRestaurante.pas</Transaction>
     <Transaction>2019/03/23 01:37:05.000.561,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Sistema.dproj=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/03/23 13:41:00.000.643,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\SistemaRestaurante.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\formlogin.dfm</Transaction>
+    <Transaction>2019/03/23 13:41:00.000.643,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\SistemaRestaurante.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\formlogin.pas</Transaction>
+    <Transaction>2019/03/23 13:42:45.000.021,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas</Transaction>
+    <Transaction>2019/03/23 13:47:44.000.959,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Princiapl.dfm</Transaction>
+    <Transaction>2019/03/23 13:47:44.000.959,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Princiapl.pas</Transaction>
+    <Transaction>2019/03/23 13:56:16.000.286,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Princiapl.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\MenuPrinciapl.pas</Transaction>
+    <Transaction>2019/03/23 13:56:16.000.286,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Princiapl.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\MenuPrinciapl.dfm</Transaction>
+    <Transaction>2019/03/24 12:59:13.000.634,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas</Transaction>
+    <Transaction>2019/03/24 12:59:31.000.073,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroColaborador.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.dfm</Transaction>
+    <Transaction>2019/03/24 12:59:31.000.073,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroColaborador.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas</Transaction>
+    <Transaction>2019/03/27 19:52:45.000.903,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroFornecedor.pas</Transaction>
+    <Transaction>2019/03/27 19:54:31.000.911,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroFornecedor.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroItem.dfm</Transaction>
+    <Transaction>2019/03/27 19:54:31.000.911,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroFornecedor.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroItem.pas</Transaction>
+    <Transaction>2019/03/27 20:07:29.000.171,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmCadastroFornecedor.pas</Transaction>
+    <Transaction>2019/03/28 11:58:09.000.229,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas</Transaction>
+    <Transaction>2019/03/28 11:58:23.000.527,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Modulo.dfm</Transaction>
+    <Transaction>2019/03/28 11:58:23.000.527,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Modulo.pas</Transaction>
+    <Transaction>2019/04/08 22:43:11.000.518,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\ModuloFornecedor.pas</Transaction>
+    <Transaction>2019/04/11 23:29:22.000.209,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit2.pas</Transaction>
+    <Transaction>2019/04/11 23:29:35.000.084,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit2.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\ModuloItem.pas</Transaction>
+    <Transaction>2019/04/11 23:29:35.000.084,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit2.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\ModuloItem.dfm</Transaction>
+    <Transaction>2019/04/14 15:16:46.948,=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas</Transaction>
+    <Transaction>2019/04/14 15:16:58.385,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmPdv.dfm=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.dfm</Transaction>
+    <Transaction>2019/04/14 15:16:58.385,C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\FrmPdv.pas=C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRestaurante\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
-    <File Path="SistemaRestaurante.pas"/>
-    <File Path="SistemaRestaurante.dfm"/>
+    <File Path="formlogin.pas"/>
+    <File Path="formlogin.dfm"/>
+    <File Path="MenuPrinciapl.pas"/>
+    <File Path="MenuPrinciapl.dfm"/>
+    <File Path="FrmCadastroColaborador.pas"/>
+    <File Path="FrmCadastroColaborador.dfm"/>
+    <File Path="FrmCadastroItem.pas"/>
+    <File Path="FrmCadastroItem.dfm"/>
+    <File Path="FrmCadastroFornecedor.pas"/>
+    <File Path="FrmCadastroFornecedor.dfm"/>
+    <File Path="Modulo.pas"/>
+    <File Path="Modulo.dfm"/>
+    <File Path="ModuloFornecedor.pas"/>
+    <File Path="ModuloFornecedor.dfm"/>
+    <File Path="ModuloItem.pas"/>
+    <File Path="ModuloItem.dfm"/>
+    <File Path="FrmPdv.pas"/>
+    <File Path="FrmPdv.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

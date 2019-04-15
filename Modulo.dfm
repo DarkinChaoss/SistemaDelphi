@@ -1,0 +1,181 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 530
+  Width = 684
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=Restaurante'
+      'User_Name=postgres'
+      'Password=ellsisayss'
+      'DriverID=PG')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 8
+  end
+  object driver: TFDPhysPgDriverLink
+    VendorLib = 
+      'C:\Users\Usuario\Documents\Embarcadero\Studio\Projects\SistemaRe' +
+      'staurante\Win32\Debug\lib\libpq.dll'
+    Left = 104
+    Top = 8
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 176
+    Top = 8
+  end
+  object TableColaborador: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = 'colaborador'
+    TableName = 'colaborador'
+    Left = 32
+    Top = 96
+    object TableColaboradorid: TIntegerField
+      DisplayWidth = 5
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object TableColaboradornome: TWideStringField
+      DisplayWidth = 25
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 255
+    end
+    object TableColaboradorcpf: TWideStringField
+      DisplayWidth = 16
+      FieldName = 'cpf'
+      Origin = 'cpf'
+      EditMask = '000\.000\.000\.00;1;_'
+      Size = 16
+    end
+    object TableColaboradoremail: TWideStringField
+      DisplayWidth = 25
+      FieldName = 'email'
+      Origin = 'email'
+      Size = 50
+    end
+    object TableColaboradortelefone: TWideStringField
+      DisplayWidth = 21
+      FieldName = 'telefone'
+      Origin = 'telefone'
+      Size = 50
+    end
+    object TableColaboradorendereco: TWideStringField
+      DisplayWidth = 19
+      FieldName = 'endereco'
+      Origin = 'endereco'
+      Size = 50
+    end
+    object TableColaboradorcargo: TIntegerField
+      DisplayWidth = 10
+      FieldName = 'cargo'
+      Origin = 'cargo'
+    end
+  end
+  object DsColaborador: TDataSource
+    DataSet = TableColaborador
+    Left = 128
+    Top = 96
+  end
+  object TableCargo: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = 'cargos'
+    TableName = 'cargos'
+    Left = 24
+    Top = 152
+    object TableCargoid: TIntegerField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object TableCargodescricao: TWideStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 255
+    end
+  end
+  object DsCargo: TDataSource
+    DataSet = TableCargo
+    Left = 128
+    Top = 160
+  end
+  object Query: TFDQuery
+    Connection = FDConnection1
+    Left = 24
+    Top = 224
+  end
+  object DataSource1: TDataSource
+    DataSet = Query
+    Left = 128
+    Top = 232
+  end
+  object QuerySelectAll: TFDQuery
+    Active = True
+    ConstraintsEnabled = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        'select c.id as codigo, c.nome,c.cpf,c.email,c.endereco,ca.descri' +
+        'cao from colaborador c '
+      'inner join cargos ca on c.cargo=ca.id order by c.id')
+    Left = 26
+    Top = 288
+    object QuerySelectAllcodigo: TIntegerField
+      DisplayWidth = 5
+      FieldName = 'codigo'
+      Origin = 'codigo'
+    end
+    object QuerySelectAllnome: TWideStringField
+      DisplayWidth = 25
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 255
+    end
+    object QuerySelectAllcpf: TWideStringField
+      FieldName = 'cpf'
+      Origin = 'cpf'
+      Size = 16
+    end
+    object QuerySelectAllemail: TWideStringField
+      DisplayWidth = 25
+      FieldName = 'email'
+      Origin = 'email'
+      Size = 50
+    end
+    object QuerySelectAllendereco: TWideStringField
+      DisplayWidth = 30
+      FieldName = 'endereco'
+      Origin = 'endereco'
+      Size = 50
+    end
+    object QuerySelectAlldescricao: TWideStringField
+      AutoGenerateValue = arDefault
+      DisplayWidth = 20
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 255
+    end
+  end
+  object DataSelectAllColaborador: TDataSource
+    DataSet = QuerySelectAll
+    Left = 130
+    Top = 288
+  end
+  object QueryUpdateColaborador: TFDQuery
+    Connection = FDConnection1
+    Left = 56
+    Top = 360
+  end
+  object QueryDeleteColaborador: TFDQuery
+    Connection = FDConnection1
+    Left = 56
+    Top = 440
+  end
+end

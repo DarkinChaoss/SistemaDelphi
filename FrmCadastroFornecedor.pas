@@ -1,0 +1,301 @@
+unit FrmCadastroFornecedor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.jpeg,
+  Vcl.ExtCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.Mask;
+
+type
+  TFrmCFornecedor = class(TForm)
+    EdtRazao: TEdit;
+    DBGrid1: TDBGrid;
+    Image1: TImage;
+    Descrição: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    BtnNovo: TSpeedButton;
+    BtnSalvar: TSpeedButton;
+    BtnExcluir: TSpeedButton;
+    EdtEmail: TEdit;
+    EdtCnpj: TMaskEdit;
+    EdtTelefone: TMaskEdit;
+    RbNome: TRadioButton;
+    RbCpf: TRadioButton;
+    Label7: TLabel;
+    EdtCpf: TMaskEdit;
+    EdtBuscarNome: TEdit;
+    BtnEditar: TSpeedButton;
+    Label8: TLabel;
+    Label1: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    BtnCancelar: TSpeedButton;
+    Label9: TLabel;
+    EdtId: TEdit;
+    procedure RbCpfClick(Sender: TObject);
+    procedure RbNomeClick(Sender: TObject);
+    procedure BtnNovoClick(Sender: TObject);
+    procedure BtnSalvarClick(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnEditarClick(Sender: TObject);
+    procedure BtnExcluirClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure newForncedor;
+    procedure desabilitaCampos;
+    procedure habilitarCampos;
+    procedure limpaCampos;
+    procedure updateFornecedor;
+    procedure deletarFornecedor;
+    procedure cancelar;
+  end;
+
+var
+  FrmCFornecedor: TFrmCFornecedor;
+
+implementation
+
+{$R *.dfm}
+
+uses ModuloFornecedor;
+
+procedure TFrmCFornecedor.RbCpfClick(Sender: TObject);
+begin
+  if RbCpf.Checked then
+    EdtBuscarNome.Text := '';
+    EdtBuscarNome.Visible := False;
+    EdtCpf.Text :='';
+    EdtCpf.Visible :=true;
+  end;
+
+procedure TFrmCFornecedor.RbNomeClick(Sender: TObject);
+begin
+
+  if RbCpf.Checked then
+      EdtCpf.Text :='';
+      EdtCpf.Visible :=False;
+      EdtBuscarNome.Text := '';
+      EdtBuscarNome.Visible := True;
+
+  end;
+
+procedure TFrmCFornecedor.updateFornecedor;
+begin
+  DataModuloForne.QueryUpdateforn.Close;
+  DataModuloForne.QueryUpdateforn.SQL.Clear;
+  DataModuloForne.QueryUpdateforn.SQL.Add('update fornecedor set razao=:edtRazao,'+
+  'email=:edtEmail,cnpj=:edtCnpj,telefone=:edtTelefone where id=:idforn');
+
+  DataModuloForne.QueryUpdateforn.ParamByName('edtRazao').AsString := EdtRazao.Text;
+  DataModuloForne.QueryUpdateforn.ParamByName('edtEmail').AsString := EdtEmail.Text;
+  DataModuloForne.QueryUpdateforn.ParamByName('edtCnpj').AsString := EdtCnpj.Text;
+  DataModuloForne.QueryUpdateforn.ParamByName('edtTelefone').AsString := EdtTelefone.Text;
+  DataModuloForne.QueryUpdateforn.ParamByName('idforn').AsInteger := StrToInt(EdtId.Text);
+  DataModuloForne.QueryUpdateforn.ExecSQL;
+  DataModuloForne.QueryAllFornecedor.Open;
+  DataModuloForne.QueryAllFornecedor.Active:=false;
+  DataModuloForne.QueryAllFornecedor.Active:=true;
+  limpaCampos;
+  desabilitaCampos;
+  BtnEditar.Enabled:=FALSE;
+  BtnCancelar.Enabled:=FALSE;
+  BtnNovo.Enabled:=true;
+  DBGrid1.Enabled:=true;
+  ShowMessage('Editado Com sucesso');
+
+end;
+
+procedure LimparCampos();
+begin
+
+  with FrmCFornecedor   do
+    begin
+
+         EdtRazao.text := '';
+         EdtEmail.text := '';
+         EdtCnpj.text := '';
+         EdtTelefone.text := '';
+      end
+
+end;
+procedure TFrmCFornecedor.BtnCancelarClick(Sender: TObject);
+begin
+      desabilitaCampos;
+      limpaCampos;
+      BtnSalvar.Enabled:=false;
+      BtnEditar.Enabled:=false;
+      BtnCancelar.Enabled:=false;
+      BtnExcluir.Enabled:=false;
+      BtnNovo.Enabled:=true;
+      DBGrid1.Enabled:=true;
+end;
+
+procedure TFrmCFornecedor.BtnEditarClick(Sender: TObject);
+begin
+updateFornecedor;
+end;
+
+procedure TFrmCFornecedor.BtnExcluirClick(Sender: TObject);
+begin
+deletarFornecedor;
+cancelar;
+end;
+
+procedure TFrmCFornecedor.BtnNovoClick(Sender: TObject);
+
+begin
+
+    with FrmCFornecedor   do
+    begin
+
+         habilitarCampos;
+         BtnNovo.Enabled :=false;
+         BtnSalvar.Enabled := true;
+         BtnCancelar.Enabled :=true;
+         DBGrid1.Enabled :=false;
+         DataModuloForne.TableFornecedor.Insert;
+
+
+    end;
+
+end;
+
+procedure TFrmCFornecedor.BtnSalvarClick(Sender: TObject);
+begin
+    with DataModuloForne.TableFornecedor do
+    begin
+        FieldByName('razao').Value := EdtRazao.Text;
+        FieldByName('cnpj').Value := EdtCnpj.Text;
+        FieldByName('email').Value := EdtEmail.Text;
+        FieldByName('telefone').Value := EdtTelefone.Text;
+        post;
+        ShowMessage('cadastrado com sucesso');
+        open;
+
+    end;
+    DataModuloForne.QueryAllFornecedor.Close;
+    DataModuloForne.QueryAllFornecedor.Open;
+    BtnSalvar.Enabled:=False;
+    BtnCancelar.Enabled:=False;
+    BtnNovo.Enabled:= True;
+    DBGrid1.Enabled:=true;
+    LimparCampos();
+    desabilitaCampos;
+end;
+
+procedure TFrmCFornecedor.cancelar;
+begin
+      desabilitaCampos;
+      limpaCampos;
+      BtnSalvar.Enabled:=false;
+      BtnEditar.Enabled:=false;
+      BtnCancelar.Enabled:=false;
+      BtnExcluir.Enabled:=false;
+      BtnNovo.Enabled:=true;
+      DBGrid1.Enabled:=true;
+end;
+
+procedure TFrmCFornecedor.DBGrid1CellClick(Column: TColumn);
+var texto:string;
+begin
+    texto := DBGrid1.Fields[0].AsString;
+    DataModuloForne.Query.Close;
+    DataModuloForne.Query.SQL.Clear;
+    DataModuloForne.Query.SQL.Add('select * from fornecedor');
+    DataModuloForne.Query.SQL.Add('where id='+texto);
+    DataModuloForne.Query.Open;
+
+    habilitarCampos;
+    EdtId.Text := DataModuloForne.Query['id'];
+
+      if DataModuloForne.Query['razao'] <> null then
+    begin
+      EdtRazao.Text := DataModuloForne.Query['razao'];
+    end;
+      if DataModuloForne.Query['cnpj'] <> null then
+    begin
+      EdtCnpj.Text := DataModuloForne.Query['cnpj'];
+    end;
+      if DataModuloForne.Query['email'] <> null then
+    begin
+      EdtEmail.Text := DataModuloForne.Query['email'];
+    end;
+      if DataModuloForne.Query['telefone'] <> null then
+    begin
+      EdtTelefone.Text := DataModuloForne.Query['telefone'];
+    end;
+
+    BtnCancelar.Enabled:=true;
+    BtnNovo.Enabled :=false;
+    BtnExcluir.Enabled:=true;
+    BtnEditar.Enabled:=true;
+    DBGrid1.Enabled:=false;
+
+
+end;
+
+procedure TFrmCFornecedor.deletarFornecedor;
+begin
+  DataModuloForne.query.Close;
+  DataModuloForne.query.SQL.Clear;
+  DataModuloForne.query.SQL.Add('delete from fornecedor where id=:idforn');
+  DataModuloForne.query.ParamByName('idforn').AsInteger := StrToInt(EdtId.Text);
+  DataModuloForne.query.ExecSQL;
+  DataModuloForne.QueryAllFornecedor.Open;
+  DataModuloForne.QueryAllFornecedor.Active:=false;
+  DataModuloForne.QueryAllFornecedor.Active:=true;
+  ShowMessage('Delete com sucesso');
+
+
+end;
+
+procedure TFrmCFornecedor.desabilitaCampos;
+begin
+  EdtRazao.Enabled := false;
+  EdtEmail.Enabled := false;
+  EdtCnpj.Enabled := false;
+  EdtTelefone.Enabled := false;
+
+  EdtRazao.Color := cl3DDkShadow;
+  EdtEmail.color := cl3DDkShadow;
+  EdtCnpj.Color := cl3DDkShadow;
+  EdtTelefone.Color := cl3DDkShadow;
+end;
+
+procedure TFrmCFornecedor.habilitarCampos;
+begin
+
+EdtRazao.Enabled := true;
+EdtEmail.Enabled := true;
+EdtCnpj.Enabled := true;
+EdtTelefone.Enabled := true;
+
+EdtRazao.Color := clWindow;
+EdtEmail.color := clWindow;
+EdtCnpj.Color := clWindow;
+EdtTelefone.Color := clWindow;
+
+end;
+
+procedure TFrmCFornecedor.limpaCampos;
+begin
+EdtRazao.Text:='';
+EdtEmail.Text:='';
+EdtCnpj.Text:='';
+EdtCpf.Text:='';
+end;
+
+procedure TFrmCFornecedor.newForncedor;
+begin
+
+
+
+end;
+
+end.

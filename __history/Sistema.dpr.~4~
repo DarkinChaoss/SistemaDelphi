@@ -1,0 +1,20 @@
+program Sistema;
+
+uses
+  Vcl.Forms,
+  formlogin in 'formlogin.pas' {Frmlogin},
+  MenuPrinciapl in 'MenuPrinciapl.pas' {FrmPrincipal},
+  FrmCadastroColaborador in 'FrmCadastroColaborador.pas' {FrmColaborador},
+  FrmCadastroItem in 'FrmCadastroItem.pas' {FrmFornecedor};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmlogin, Frmlogin);
+  Application.CreateForm(TFrmColaborador, FrmColaborador);
+  Application.CreateForm(TFrmColaborador, FrmColaborador);
+  Application.CreateForm(TFrmFornecedor, FrmFornecedor);
+  Application.Run;
+end.
